@@ -38,7 +38,7 @@ story_description = {
                      """,
                 "options": {
                     "option_1": "will",
-                    "option_2": "where_am_I"
+                    "option_2": "where_am_i"
                 }
             },
             "will": {
@@ -71,13 +71,52 @@ story_description = {
 
 
 **--------------------------------------------------------------------------**
-        Option 1: 
-        Option 2: 
+        Option 1: Tell Navidson you don't remember anything
+        Option 2: Tell Navidson about the bathroom
 **--------------------------------------------------------------------------**
                 """,
                 "options": {
-                    "option_1": "",
-                    "option_2": ""
+                    "option_1": "dont_remember",
+                    "option_2": "bathroom"
+                }
+            },
+            "where_am_i": {
+                        "text": """
+**--------------------------------------------------------------------------**
+
+        "Where am I?", you say cautiously. 
+        
+        "Ah, the cautious type." Navidson remarks with a half-grin 
+        Its our job to keep an eye on you for a bit, ask you a few 
+        questions, find out anything you can remember before passing 
+        out, makesure you're all healthy in the head - that sort of 
+        thing!"
+
+        "Well, Will, is there anything you can recall from before
+        you passed out?"
+
+        You look around the room. There are two men in shirts and
+        ties posted at either side of what seems to be the only 
+        door in or out of here. Navidson himself wears a blue
+        button-down shirt and navy slacks. The only feature on the
+        walls, apart from the one door, looks like one of those
+        reflective one-way windows they use in interrogation
+        rooms in police stations in the movies. Except the shape
+        of it is weird - its longer vertically than it is
+        horizontally.
+
+        You have an uneasy feeling as you take all of this in"
+
+
+
+**--------------------------------------------------------------------------**
+        Option 1: Tell Navidson you don't remember anything
+        Option 2: Tell Navidson about the bathroom
+**--------------------------------------------------------------------------**
+                """,
+                "options": {
+                    "option_1": "dont_remember",
+                    "option_2": "bathroom"
                 }
             },
 }
