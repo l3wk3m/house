@@ -119,4 +119,107 @@ story_description = {
                     "option_2": "bathroom"
                 }
             },
+            "dont_remember": {
+                        "text": """
+**--------------------------------------------------------------------------**
+
+        "I don't remember anything, sorry."
+
+        Navidson looks at you, slightly unbelieving.
+
+        "Nothing at all?", he presses you.
+
+**--------------------------------------------------------------------------**
+        Option 1: Insist you don't remember anything
+        Option 2: Tell Navidson about the bathroom
+**--------------------------------------------------------------------------**
+                """,
+                "options": {
+                    "option_1": "still_dont_remember",
+                    "option_2": "bathroom"
+                }
+            },
+            "still_dont_remember": {
+                        "text": """
+**--------------------------------------------------------------------------**
+        
+        "No, nothing." You insist firmly.
+
+        You look around the room. The small one-directional mirror
+        draws your attention now more than ever.
+
+        "Okay", sighs Navidson, resigned, "We just had to be sure!"
+
+**--------------------------------------------------------------------------**
+        Option 1: Ask if this is an interrogation
+        Option 2: Tell Navidson about the bathroom
+**--------------------------------------------------------------------------**
+                """,
+                "options": {
+                    "option_1": "interrogation",
+                    "option_2": "bathroom"
+                }
+            },
+            "interrogation": {
+                        "text": """
+**--------------------------------------------------------------------------**
+        
+        "Am I being interrogated?" You ask.
+
+        Navidson smiles, a tinge of regret flashing across his
+        features.
+
+        "No, you aren't being interrogated. Like I said before:
+        we're only asking you these questions for the good of
+        your health. You're free to leave at any time."
+
+**--------------------------------------------------------------------------**
+        Option 1: Ask to leave now
+        Option 2: Tell Navidson about the bathroom
+**--------------------------------------------------------------------------**
+                """,
+                "options": {
+                    "option_1": "leave",
+                    "option_2": "bathroom"
+                }
+            },
+            "leave": {
+                        "text": """
+**--------------------------------------------------------------------------**
+        
+        "Well then I'd like to leave now." You say.
+
+        Navidson smiles again and you seem to almost catch him rolling his eyes.
+
+        "Your call!" He smiles.
+
+        His smile is warm. In spite of how odd this all is, you can't help but
+        feel a sense of trust towards him.
+
+        He turns in his chair without standing and nods two the two men by the
+        door. The two of them nod back, opening the door and walking out,
+        leaving it ajar behind them.
+
+        Navidson stays sitting, half turned towards the open door, as if
+        waiting for something to happen. Then, suddenly, as if getting
+        the que he was waiting for he sharply swivels his head back around to
+        face you. He gets up suddenly moving swiftly across the room to where 
+        you're seated, taking something from his pocket as he approaches. 
+        He kneels beside you revealing a key he's holding out to you.
+
+        "Okay, Will, this is it." he whispers. "Take the key, look in the
+        mirror." he says, holding out the key.
+
+        What do you do?
+
+**--------------------------------------------------------------------------**
+        Option 1: Take the key
+        Option 2: Dash through the open door behind him
+**--------------------------------------------------------------------------**
+                """,
+                "options": {
+                    "option_1": "take_key",
+                    "option_2": "dash"
+                }
+            },
 }
