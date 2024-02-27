@@ -118,14 +118,20 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 ## Deployment
 
 This site is deployed using Heroku. To deploy it from its GitHub repository to Heroku, I took the following steps:
-1. Log in (or sign up) to GitHub.
-2. Navigate to the repository for this project by selecting [*l3wk3m/house*](https://github.com/l3wk3m/house)
-3. Click the *Settings* tab above the repository 
-4. xxx
-5. In the section **"xxx"** under *xxx* select *xxx* 
-6. In the section **"xxx"** under *xxx* select in the first area *xx* and in the second *xxx*
-7. Click the *Save* Button<br>
-After refreshing the settings site for this repository above the **"Build and deployment"** section, you will see the Link to the Heroku Pages area with the link to the [view of the live site](https://l3wk3m.github.io/house/)
+1. Log in (or sign up) to Heroku.
+2. Navigate to the Heroku Dashboard and select 'Create New App'.
+3. I then named my deployment house_l3wk3m.
+4. Select your region. I'm in Europe so I chose Europe.
+5. Click 'Create App'.
+6. On the next page, click on the 'Settings' tab.
+7. Head to the 'Config Vars' section. In the box for 'KEY' enter PORT and in the box for 'VALUE' enter 8000.
+8. Scroll down to the 'Add Buildpack' sectoin and click 'Add Buildpack'. Click on the 'PYTHON' buildpack and click 'Save Changes', then click 'Add Buildpack' again and select 'NODEJS'. Make sure you select these two in this order.
+9. Now head down to the deployment section and, under the 'Deployment Method' heading, click 'Connect to Github'.
+10. Once connected, click in the search box and search for the 'house' repo (you will need to have cloned the 'House' repo from my github if you are deploying this yourself - in order to do this, please see the 'Cloning This Repository' guide below)
+11. Choose either 'Automatic Deploys' or 'Manual Deploys' in order to deploy your project. I chose Automatic for the purposes of testing, but if you're just deploying the app to use it yourself, you can select 'Manual Deploy'.
+12. You will see the app being built in the 'Build Master' terminal below the deploy options once you've deployed.
+13. When you've seen its done, you will see an 'App successfully deployed' message, with a link to click through to view your project.
+
 
 - Forking this GitHub repository
 1.  Log in to GitHub.
