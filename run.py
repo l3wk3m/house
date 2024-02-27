@@ -1,9 +1,56 @@
+import sys
+import time
+
+from story import story_text
+
 """
 Welcome the player to the game.
 Tell them this is a survival horror text based adventure game.
 Ask them if they'd like to try escape...HOUSE (in ascii art)
 y/n/how to play
 """
+
+class Player:
+    """
+    This is the class of Player that will hold a value
+    that will be used to evaluate whether or not the Player
+    is holding the key needed for the game's true ending.
+    """
+    def __init__(self, has_key):
+        self.has_key = has_key
+
+class House:
+    """
+    This is the main class for the game 'House'
+    This is the sttucture I will be using to call
+    and evaluate player choices from the dicts
+    in the story.py file
+    """
+    def __init__(self):
+        """
+        This is the initialiser for the game.
+        It launches an instance of House to the virtual terminal
+        and calls the dict in story.py to prompt the user with 
+        choices from which they will play out the text-based
+        adventure.
+        """
+        self.story_text = story_text
+
+    def type_text(self, text, delay=0.0125):
+        """
+        Simulates the printing speed of a terminal to give the 
+        Player a feeling that they're experiencing the story
+        as it is happening to them.
+        A default typespeed is passed but this can be altered
+        for more dramatic moments in the game.
+        """
+        #Credit for this code to github.com/queenisabaer and github.com/gayatrig19
+
+        for char in text:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(delay)
+        print()
 
 """
 How to play:

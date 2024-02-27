@@ -6,7 +6,7 @@ The run.py program will call these in and prompt the player with
 choices of what to do next in the story.
 """
 
-story_description = {
+story_text = {
             "start": {
                 "text": """
 **--------------------------------------------------------------------------**
