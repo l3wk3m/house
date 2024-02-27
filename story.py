@@ -231,4 +231,116 @@ story_description = {
         FORK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         FORK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ***
+
+        "dash": {
+                        "text": """
+**--------------------------------------------------------------------------**
+        
+        You push Navidson hard and make your dash for the door. You're
+        not sure what's going on but hell if you're going to stick
+        around to find out.
+
+        Navidson falls easily out of your way from the crouched position
+        he was in. Your path is clear and you make a dash for the open door.
+        As you get close to the door, one of the men in shirts looks in the 
+        door and sees you approaching. He sticks out his arms to block the
+        door.
+
+        You charge through the open door anyway colliding with the man and
+        losing your footing. The two of you tumble to the ground. In moments,
+        the second shirted man is also by you and your vision begins to swim.
+
+        As you dip out of consciousness you think you hear Navidson shout
+        out in protest for the men to stop in the other room. You lose
+        consciousness.
+
+                        ****
+
+        You regain consciousness. It's hard to tell what happened to you
+        but as you wake up you notice you're sitting in a private bathroom
+        somewhere.
+
+        You get to your feet and make your way to the door, its locked from
+        the inside. You must have fainted in here earlier...but why?
+
+        You feel fine, you think.
+
+        You stand up and take a look in the mirror.
+
+        Everything seems normal, but... You're not sure.
+
+        It's as if something is out of place but you can't quite place what.
+
+        You turn on the sink fosset and wash your hands before leaving - who
+        knows how long you'd been lying on that floor.
+
+        You unlock the door and walk out into what seems to be a hospital
+        ward. Nurses and doctors zip by, the smell of the ward permeates 
+        through to unpleasant memories you'd had of hospital visits when
+        you were a child. You want to get out of here.
+
+        How did nobody realise you'd been unconscious in a hospital
+        bathroom for such a stretch of time. Actually, how long had it been?
+
+        And why were you even visiting a hospital in the first place.
+
+        The more you think about it, the more your brain seems to piece
+        things together...but there's still a lingering feeling.
+
+        Like you've missed something.
+
+        It's probably not important.
+
+        Wow, it sure is a nice day out.
+
+
+        *** ENDING 1/4 *** 
+        """
+    },
+
+        "take_key": {
+                    "text": """
+**--------------------------------------------------------------------------**
+        
+        You don't know why but...something in your gut tells you
+        to trust this man. That you need to trust him.
+
+        You take the key.
+
+        Keeping silent, Navidson leans in closer to you and points to the
+        wall behind him.
+
+        He's pointing at the mini interrogation window you spotted earlier.
+
+        You get up and aproach it, you need to find out where this is going.
+
+        You look onto the shining surface that caught your eye earlier and
+        something that you didn't fully notice earlier clicks for you.
+
+        You can see the room around you reflected in this one-way window,
+        the chairs you and Navidson were sitting on, Navidson himself
+        watching intently from where he's still crouched down, but you
+        aren't in the reflection...
+
+        It's as if some light distortion happens around where you're
+        standing.
+
+        Bewildered, you look back to Navidson. He's slowly nodding.
+
+        He gestures back to the reflective surface.
+
+        You turn around to face the mirror again.
+
+        
+
+**--------------------------------------------------------------------------**
+        Option 1: 
+        Option 2: 
+**--------------------------------------------------------------------------**
+            """,
+                "options": {
+                    "option_1": "",
+                    "option_2": ""
+                }
+        },  
 }
