@@ -52,6 +52,39 @@ class House:
             time.sleep(delay)
         print()
 
+    def main_menu(self):
+        """
+        Displays the game title to the terminal in ASCII
+        characters and prompts the player if they would like
+        to begin the game.
+        """
+        
+
+        begin_game = input(print("Would you like to begin playing the game? Y/N"))
+
+    def start_game(self):
+        """
+        This function runs automatically in the window upon
+        initialisation of the game.
+        """
+        while True:
+            self.main_menu()
+
+
+    def play(self):
+        """
+        The main function of run.py
+        This will iterate through every other function in the file
+        to execute the game loop.
+        This displays the start screen, gives the option of 
+        displaying game instructions, the option of starting the
+        game and then executes the game loop, pulling player
+        options from the dictionary in story.py.
+        """
+        self.main_menu():
+            while current_node:
+
+                
 """
 How to play:
 You will be walked through your memories by Mr. N
