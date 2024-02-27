@@ -36,7 +36,7 @@ class House:
         """
         self.story_text = story_text
 
-    def type_text(self, text, delay=0.0125):
+    def type_text(self, text, delay=0.03):
         """
         Simulates the printing speed of a terminal to give the 
         Player a feeling that they're experiencing the story
@@ -58,9 +58,38 @@ class House:
         characters and prompts the player if they would like
         to begin the game.
         """
-        
 
-        begin_game = input(print("Would you like to begin playing the game? Y/N"))
+        type_text("Welcome to...\n", 0.0125)
+
+        print("""
+        ████████████████████████████████████████████████████████████████████████████
+        █░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░█████████░░▄▀░░█████████
+        █░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░░░░░░░░░▄▀░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█████████░░▄▀░░█░░▄▀░░█████████
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░░░░░░░░░▄▀░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        ████████████████████████████████████████████████████████████████████████████\n
+        """)
+
+        while True:
+            begin_game = input(print("Are you ready to begin playing the game? Y/N"))
+
+            if begin_game.lower() == "yes" or "y":
+                #Enter a try except statement here at a later date
+                self.type_text("Then let's begin...", 0.0125)
+                self.play()
+                break
+
+            elif begin_game.lower() == "no" or "n":
+                self.type_text("A wise choice...", 0.01)
+                self.type_text("When you are ready, type 'y'")
+
 
     def start_game(self):
         """
@@ -69,6 +98,7 @@ class House:
         """
         while True:
             self.main_menu()
+            if 
 
 
     def play(self):
