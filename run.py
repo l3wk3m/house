@@ -18,7 +18,10 @@ class Player:
     is holding the key needed for the game's true ending.
     """
     def __init__(self, has_key):
-        self.has_key = has_key
+        self.has_key = False
+
+    def get_key(self):
+        self.has_key = True
 
 
 class House:
