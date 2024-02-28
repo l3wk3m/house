@@ -10,6 +10,7 @@ Ask them if they'd like to try escape...HOUSE (in ascii art)
 y/n/how to play
 """
 
+
 class Player:
     """
     This is the class of Player that will hold a value
@@ -18,6 +19,7 @@ class Player:
     """
     def __init__(self, has_key):
         self.has_key = has_key
+
 
 class House:
     """
@@ -30,7 +32,7 @@ class House:
         """
         This is the initialiser for the game.
         It launches an instance of House to the virtual terminal
-        and calls the dict in story.py to prompt the user with 
+        and calls the dict in story.py to prompt the user with
         choices from which they will play out the text-based
         adventure.
         """
@@ -38,13 +40,15 @@ class House:
 
     def type_text(self, text, delay=0.03):
         """
-        Simulates the printing speed of a terminal to give the 
+        Simulates the printing speed of a terminal to give the
         Player a feeling that they're experiencing the story
         as it is happening to them.
         A default typespeed is passed but this can be altered
         for more dramatic moments in the game.
+
+        Credit for this code to github.com/queenisabaer
+        and github.com/gayatrig19
         """
-        #Credit for this code to github.com/queenisabaer and github.com/gayatrig19
 
         for char in text:
             sys.stdout.write(char)
@@ -78,7 +82,9 @@ class House:
         """)
 
         while True:
-            begin_game = input("Are you ready to begin playing the game? Y/N\n")
+            begin_game = input("""
+            Are you ready to begin playing the game?\n
+            """)
 
             if begin_game.lower() == "yes" or "y":
                 #Enter a try/except statement here at a later date
@@ -91,21 +97,26 @@ class House:
                 self.type_text("When you are ready, type 'y' and hit return")
 
             else:
-                print(f"{begin_game} is not a valid choice, please enter 'y' or 'n' and try again.")
+                print(
+                    f"{begin_game} is not a valid choice,
+                    please enter 'y' or 'n' and try again."
+                    )
 
 
     def restart(self):
-        restart_prompt = input("Would you like to play again? Y/N").strip().lower()
-        while True:    
-                if restart_prompt == "yes" or "y"
-                    current_node = start
-                    self.main_menu()
-                    break
-                elif restart_prompt == "no" or "n":
-                    print("Thank you for playing!")
-                    break
-                else:
-                    print("Invalid input. Please type 'Y' or 'N' and hit return")
+        restart_prompt = input("""
+        Would you like to play again? Y/N
+        """).strip().lower()
+        while True:
+            if restart_prompt == "yes" or "y":
+                current_node = start
+                self.main_menu()
+                break
+            elif restart_prompt == "no" or "n":
+                print("Thank you for playing!")
+                break
+            else:
+                print("Invalid input. Please type 'Y' or 'N' and hit return")
 
 
     def play(self, current_node="start"):
@@ -113,7 +124,7 @@ class House:
         The main function of run.py
         This will iterate through every other function in the file
         to execute the game loop.
-        This displays the start screen, gives the option of 
+        This displays the start screen, gives the option of
         displaying game instructions, the option of starting the
         game and then executes the game loop, pulling player
         options from the dictionary in story.py.
@@ -134,95 +145,34 @@ class House:
                 break
             elif ending == "2":
                 self.type_text("""
-                
+                Ending 2
                 """)
                 self.restart()
                 break
             elif ending == "3":
                 self.type_text("""
-                
+                Ending 3
                 """)
                 self.restart()
                 break
             elif ending == "4":
                 self.type_text("""
-                
+                Ending 4
                 """)
                 self.restart()
                 break
 
             while options:
-                choice = input("What would you like to do? Enter 1 or 2 and then hit return").strip()
+                choice = input("""
+                What would you like to do? Enter 1 or 2 and then hit return
+                """).strip()
                 #Enter try/except statement later
                 if choice != "1" or "2":
                     print("Please choose 1 or 2 and hit return")
                 else:
                     current_node = options[f"option_{choice}"]
                     break
-                
 
 if __name__ == "__main__":
     game = House()
     game.main_menu()
-
-                
-"""
-How to play:
-You will be walked through your memories by Mr. N
-As you recall what happened you will be prompted with choices of what you chose (past tense)
-to do next.
-You will be prompted with a sanity meter from the first question you're asked
-and immediately lose some sanity.
-Reaching below zero sanity will cause a GAME OVER state.
-The game has four endings.
-(There are collectibles along the way)
-(100% clear means finding the "true" ending and getting every collectible)
-"""
-
-"""
-Describe the interrogation room that they find themselves in
-Describe the man asking them questions
-He asks what the last thing you remember is...
-As you think back you mention a bathroom
-He pushed you, saying you were found in a long hallway
-You immediately take sanity damage
-But as you reach into your memory you do remember something
-about a hallway
-"""
-
-"""
-Choice 1:
-You remember a hallway that didn't seem to end
-Worse than that, you remember finding this hallway
-In your own house.
-
-He prompts you to continue.
-
-Do you:
-
-1. Continue to explore your memories?
-2. Ask him where you are right now?
-
-Exploring you memories will cause you to lose sanity, but will uncover more of what really happened.
-Asking him where you are now will restore sanity, though his answer won't match up to your memories.
-"""
-
-"""
-This creates the first branching path:
-
-You can continue down the line of questioning your interrogator,
-gaining sanity all while you do.
-This will grant you ending 1:
-
-"The bureau helps you fill in the story, your sanity recovers as they do and 
-you come to the conclusion (despite what was written in the beginning of the game) 
-that you never passed out in your house and were found, 
-you voluntarily walked to the bureau’s offices to report something strange about your house. 
-They reassure you there was nothing strange 
-about what you experienced. Maybe you just need a good night’s sleep. Maybe you do. 
-You leave the bureau with a full bar of sanity but as a player 
-you will get the feeling that something isn’t right."
-
-You can choose to break from this path at any choice as you go along
-but the later you break from the path the more sanity you lose.
-"""
