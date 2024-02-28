@@ -78,7 +78,7 @@ class House:
         """)
 
         while True:
-            begin_game = input(print("Are you ready to begin playing the game? Y/N"))
+            begin_game = input(print("Are you ready to begin playing the game? Y/N\n"))
 
             if begin_game.lower() == "yes" or "y":
                 #Enter a try except statement here at a later date
@@ -90,6 +90,9 @@ class House:
                 self.type_text("A wise choice...", 0.01)
                 self.type_text("When you are ready, type 'y'")
 
+            else:
+                print(f"{begin_game} is not a valid choice, please try again.")
+
 
     def start_game(self):
         """
@@ -100,8 +103,10 @@ class House:
             self.main_menu()
             if 
 
+    def restart(self):
+        
 
-    def play(self):
+    def play(self, current_node="start"):
         """
         The main function of run.py
         This will iterate through every other function in the file
@@ -111,8 +116,48 @@ class House:
         game and then executes the game loop, pulling player
         options from the dictionary in story.py.
         """
-        self.main_menu():
-            while current_node:
+        while current_node:
+            node = self.story_text[current_node]
+            text = node["text"]
+            options = node["options"]
+            ending = node.get("ending")
+
+            print(text)
+
+            if ending == "1":
+                self.type_text("""
+                
+                """)
+                self.restart()
+                break
+            elif ending == "2":
+                self.type_text("""
+                
+                """)
+                self.restart()
+                break
+            elif ending == "3":
+                self.type_text("""
+                
+                """)
+                self.restart()
+                break
+            elif ending == "4":
+                self.type_text("""
+                
+                """)
+                self.restart()
+                break
+
+            if options:
+                choice = input("What would you like to do? Enter 1 or 2 and then hit return").strip()
+                #Enter try/except statement later
+                if choice != "1" or "2":
+                    print("Please choose 1 or 2 and hit return")
+                else:
+                    current_node = options[f"option_{choice}"]
+            else:
+                current_node = f"Ending {ending}/4 discovered"
 
                 
 """
