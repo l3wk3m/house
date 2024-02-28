@@ -195,6 +195,9 @@ class House:
                 #Enter try/except statement later
                 while choice not in ["1", "2"]:
                     print("Please choose 1 or 2 and hit return")
+                    choice = input(("""
+                    What would you like to do? Enter 1 or 2 and then hit return
+                    """).strip())
                 current_node = options[f"option_{choice}"]
             else:
                 current_node = None
