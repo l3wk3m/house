@@ -99,7 +99,6 @@ class House:
                 elif begin_game == "no" or begin_game == "n":
                     self.type_text("A wise choice...\n", 0.01)
                     self.type_text("When you are ready, type 'y' and hit return")
-                    print(begin_game)
 
                 else:
                     if begin_game.isalpha() == False:
@@ -182,6 +181,9 @@ class House:
                 player_char.take_key()
                 print("You've acquired a key - this could come in handy later...")
 
+            if player_char.has_key() == True:
+
+
             if options:
                 choice = input("""
                 What would you like to do? Enter 1 or 2 and then hit return
@@ -193,7 +195,6 @@ class House:
             else:
                 current_node = None
 
-            print("Thank you for playering ERROR")
 
 if __name__ == "__main__":
     game = House()

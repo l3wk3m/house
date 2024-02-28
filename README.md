@@ -155,11 +155,6 @@ This site is deployed using Heroku. To deploy it from its GitHub repository to H
 ### Code
 
 - My data structure for calling my story elements and taking inputs from the user works as follows:
- 
-#### Code Logic
-
-- 
-
 
 - The following websites were used as a source of knowledge: <br>
   - [Google](www.google.com)
