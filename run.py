@@ -125,6 +125,9 @@ class House:
             else:
                 print("Invalid input. Please type 'Y' or 'N' and hit return")
 
+    def check_key_status(self):
+        if player_char.has_key() == True:
+            escape = True
 
     def play(self, current_node="start"):
         """
@@ -144,6 +147,8 @@ class House:
             options = node["options"]
             ending = node.get("ending")
             key = node.get("key")
+            lock = node.get("lock")
+            escape = False
 
             print(text)
 
@@ -176,8 +181,9 @@ class House:
                 player_char.take_key()
                 print("You've acquired a key - this could come in handy later...")
 
-            if player_char.has_key() == True:
-
+            if lock == "try":
+                if player_char.has_key() == True:
+                    escape = True
 
             if options:
                 choice = input("""
