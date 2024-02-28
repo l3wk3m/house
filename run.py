@@ -91,18 +91,8 @@ class House:
                 self.type_text("When you are ready, type 'y' and hit return")
 
             else:
-                print(f"{begin_game} is not a valid choice, please try again.")
+                print(f"{begin_game} is not a valid choice, please enter 'y' or 'n' and try again.")
 
-
-    def start_game(self):
-        """
-        This function runs automatically in the window upon
-        initialisation of the game.
-        """
-        self.main_menu()
-        while True:
-            self.main_menu()
-            if 
 
     def restart(self):
         restart_prompt = input("Would you like to play again? Y/N").strip().lower()
@@ -161,15 +151,15 @@ class House:
                 self.restart()
                 break
 
-            if options:
+            while options:
                 choice = input("What would you like to do? Enter 1 or 2 and then hit return").strip()
                 #Enter try/except statement later
                 if choice != "1" or "2":
                     print("Please choose 1 or 2 and hit return")
                 else:
                     current_node = options[f"option_{choice}"]
-            else:
-                print(f"Ending {ending}/4 discovered")
+                    break
+                
 
 if __name__ == "__main__":
     game = House()

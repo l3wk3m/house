@@ -114,10 +114,8 @@ story_text = {
         Option 2: Tell Navidson about the bathroom
 **--------------------------------------------------------------------------**
                 """,
-                "options": {
-                    "option_1": "dont_remember",
-                    "option_2": "bathroom"
-                }
+                "options": {}
+                "ending": "1"
             },
             "dont_remember": {
                         "text": """
