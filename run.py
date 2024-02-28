@@ -89,22 +89,31 @@ class House:
             begin_game = input("""
             Are you ready to begin playing the game?\n
             """).lower()
+            try:
+                if begin_game == "yes" or begin_game == "y":
+                    #Enter a try/except statement here at a later date
+                    self.type_text("Then let's begin...", 0.01)
+                    self.play()
+                    break
 
-            if begin_game == "yes" or begin_game == "y":
-                #Enter a try/except statement here at a later date
-                self.type_text("Then let's begin...", 0.01)
-                self.play()
-                break
+                elif begin_game == "no" or begin_game == "n":
+                    self.type_text("A wise choice...\n", 0.01)
+                    self.type_text("When you are ready, type 'y' and hit return")
+                    print(begin_game)
 
-            elif begin_game == "no" or begin_game == "n":
-                self.type_text("A wise choice...", 0.01)
-                self.type_text("When you are ready, type 'y' and hit return")
-                print(begin_game)
+                else:
+                    if begin_game.isalpha() == False:
+                        raise ValueError
+                    print(f"""
+                    {begin_game} is not a valid choice.
+                    Please enter 'y' or 'n' and try again."
+                    """)
 
-            else:
-                print(
-                    f"{begin_game} is not a valid choice. Please enter 'y' or 'n' and try again."
-                    )
+            except ValueError as e:
+                print(f"""
+                {begin_game} raised a ValueError : {e}
+                Please enter 'y' or 'n' and try again."
+                    """)
 
 
     def restart(self):
