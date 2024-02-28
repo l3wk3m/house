@@ -323,14 +323,54 @@ story_text = {
         
 
 **--------------------------------------------------------------------------**
-        Option 1: 
+        Option 1: Head for the door
         Option 2: 
 **--------------------------------------------------------------------------**
             """,
                 "options": {
-                    "option_1": "",
+                    "option_1": "door",
                     "option_2": ""
                 },
                 "key": "acquired"
-        },  
+        },
+
+        "door": {
+                    "text": """
+**--------------------------------------------------------------------------**
+        
+        You sprint across the living room.
+
+        You think you recognize the room, the layout of the furniture.
+
+        But all that's on your mind right now is escape.
+
+        You reach the door, what do you do now.
+
+**--------------------------------------------------------------------------**
+        Option 1: Try the door
+        Option 2: Use the key
+**--------------------------------------------------------------------------**
+            """,
+                "options": {
+                    "option_1": "open_door",
+                    "option_2": "unlock_door"
+                },
+        },
+
+        "unlock_door": {
+                    "text": """
+**--------------------------------------------------------------------------**
+        
+        You try the key in the keyhole. It turns.
+
+        Without taking a beat to look back at the source of the sound
+        behind you, you push your way out through the door, the sunlight
+        piercing your eyes for the first time in what feels like days.
+
+**--------------------------------------------------------------------------**
+            """,
+                "options": {},
+                "lock": "try",
+                "ending": "3"
+        },
 }

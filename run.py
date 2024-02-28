@@ -152,6 +152,17 @@ class House:
 
             print(text)
 
+            if key == "acquired":
+                player_char.take_key()
+                print("You've acquired a key - this could come in handy later...")
+
+            if lock == "try":
+                if player_char.has_key:
+                    self.type_text("You try your key in the door...", 0.5)
+                    print("It works!")
+                    print("The door swings open in front of you.")
+                    self.type_text("You're free.", 1)
+
             if ending == "1":
                 self.type_text("""
                     Ending 1 of 4 has been discovered
@@ -166,7 +177,7 @@ class House:
                 break
             elif ending == "3":
                 self.type_text("""
-                Ending 3
+                Ending 3 / 4 discovered - True Ending!
                 """)
                 self.restart()
                 break
@@ -176,14 +187,6 @@ class House:
                 """)
                 self.restart()
                 break
-
-            if key == "acquired":
-                player_char.take_key()
-                print("You've acquired a key - this could come in handy later...")
-
-            if lock == "try":
-                if player_char.has_key() == True:
-                    escape = True
 
             if options:
                 choice = input("""
