@@ -330,6 +330,7 @@ story_text = {
                 "options": {
                     "option_1": "",
                     "option_2": ""
-                }
+                },
+                "key": "acquired"
         },  
 }

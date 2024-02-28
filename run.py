@@ -18,12 +18,11 @@ class Player:
     is holding the key needed for the game's true ending.
     """
     def __init__(self, has_key):
-        self.has_key = False
+        self.has_key = has_key
 
-    def get_key(self):
+    def take_key(self):
         self.has_key = True
 
-player_char = Player()
 
 class House:
     """
@@ -42,7 +41,7 @@ class House:
         """
         self.story_text = story_text
 
-    def type_text(self, text, delay=0.03):
+    def type_text(self, text, delay=0.01):
         """
         Simulates the printing speed of a terminal to give the
         Player a feeling that they're experiencing the story
@@ -67,7 +66,7 @@ class House:
         to begin the game.
         """
 
-        self.type_text("Welcome to...\n", 0.0125)
+        self.type_text("Welcome to...\n", 0.06)
 
         print("""
         
@@ -89,17 +88,18 @@ class House:
         while True:
             begin_game = input("""
             Are you ready to begin playing the game?\n
-            """)
+            """).lower()
 
-            if begin_game.lower() == "yes" or "y":
-                #Enter a try/except statement here at a later date
-                self.type_text("Then let's begin...", 0.0125)
-                self.play()
-                break
-
-            elif begin_game.lower() == "no" or "n":
+            if begin_game == "no" or "n":
                 self.type_text("A wise choice...", 0.01)
                 self.type_text("When you are ready, type 'y' and hit return")
+                print(begin_game)
+
+            elif begin_game == "yes" or "y":
+                #Enter a try/except statement here at a later date
+                self.type_text("Then let's begin...", 0.01)
+                self.play()
+                break
 
             else:
                 print(
@@ -133,18 +133,21 @@ class House:
         game and then executes the game loop, pulling player
         options from the dictionary in story.py.
         """
+        player_char = Player(False)
+
         while current_node:
             node = self.story_text[current_node]
             text = node["text"]
             options = node["options"]
             ending = node.get("ending")
+            key = node.get("key")
 
             print(text)
 
             if ending == "1":
                 self.type_text("""
                     Ending 1 of 4 has been discovered
-                """)
+                """, 0)
                 self.restart()
                 break
             elif ending == "2":
@@ -166,6 +169,10 @@ class House:
                 self.restart()
                 break
 
+            if key == "acquired":
+                player_char.take_key()
+                print("You've acquired a key - this could come in handy later...")
+
             if options:
                 choice = input("""
                 What would you like to do? Enter 1 or 2 and then hit return
@@ -176,6 +183,8 @@ class House:
                 current_node = options[f"option_{choice}"]
             else:
                 current_node = None
+
+            print("Thank you for playering ERROR")
 
 if __name__ == "__main__":
     game = House()
