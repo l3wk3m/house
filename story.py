@@ -32,8 +32,8 @@ story_text = {
 
 
 **--------------------------------------------------------------------------**
-        Option 1: "Will. My name is Will. Where am I?"
-        Option 2: "Who are you? Where am I?"
+        Option 1: Tell him your name.
+        Option 2: Don't answer the question. Ask where you are instead.
 **--------------------------------------------------------------------------**
                      """,
                 "options": {

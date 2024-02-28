@@ -78,17 +78,17 @@ class House:
         """)
 
         while True:
-            begin_game = input(print("Are you ready to begin playing the game? Y/N\n"))
+            begin_game = input("Are you ready to begin playing the game? Y/N\n")
 
             if begin_game.lower() == "yes" or "y":
-                #Enter a try except statement here at a later date
+                #Enter a try/except statement here at a later date
                 self.type_text("Then let's begin...", 0.0125)
                 self.play()
                 break
 
             elif begin_game.lower() == "no" or "n":
                 self.type_text("A wise choice...", 0.01)
-                self.type_text("When you are ready, type 'y'")
+                self.type_text("When you are ready, type 'y' and hit return")
 
             else:
                 print(f"{begin_game} is not a valid choice, please try again.")
@@ -99,12 +99,24 @@ class House:
         This function runs automatically in the window upon
         initialisation of the game.
         """
+        self.main_menu()
         while True:
             self.main_menu()
             if 
 
     def restart(self):
-        
+        restart_prompt = input("Would you like to play again? Y/N").strip().lower()
+        while True:    
+                if restart_prompt == "yes" or "y"
+                    current_node = start
+                    self.main_menu()
+                    break
+                elif restart_prompt == "no" or "n":
+                    print("Thank you for playing!")
+                    break
+                else:
+                    print("Invalid input. Please type 'Y' or 'N' and hit return")
+
 
     def play(self, current_node="start"):
         """
@@ -126,7 +138,7 @@ class House:
 
             if ending == "1":
                 self.type_text("""
-                
+                    Ending 1 of 4 has been discovered
                 """)
                 self.restart()
                 break
@@ -157,7 +169,11 @@ class House:
                 else:
                     current_node = options[f"option_{choice}"]
             else:
-                current_node = f"Ending {ending}/4 discovered"
+                print(f"Ending {ending}/4 discovered")
+
+if __name__ == "__main__":
+    game = House()
+    game.main_menu()
 
                 
 """
