@@ -90,16 +90,16 @@ class House:
             Are you ready to begin playing the game?\n
             """).lower()
 
-            if begin_game == "no" or "n":
-                self.type_text("A wise choice...", 0.01)
-                self.type_text("When you are ready, type 'y' and hit return")
-                print(begin_game)
-
-            elif begin_game == "yes" or "y":
+            if begin_game == "yes" or begin_game == "y":
                 #Enter a try/except statement here at a later date
                 self.type_text("Then let's begin...", 0.01)
                 self.play()
                 break
+
+            elif begin_game == "no" or begin_game == "n":
+                self.type_text("A wise choice...", 0.01)
+                self.type_text("When you are ready, type 'y' and hit return")
+                print(begin_game)
 
             else:
                 print(
@@ -108,16 +108,16 @@ class House:
 
 
     def restart(self):
-        restart_prompt = input("""
-        Would you like to play again? Y/N
-        """).strip().lower()
         while True:
-            if restart_prompt == "yes" or "y":
+            restart_prompt = input("""
+        Would you like to play again?
+        """).strip().lower()
+            if restart_prompt == "no" or restart_prompt == "n":
+                print("Thank you for playing!")
+                break
+            elif restart_prompt == "yes" or restart_prompt == "y":
                 current_node = "start"
                 self.main_menu()
-                break
-            elif restart_prompt == "no" or "n":
-                print("Thank you for playing!")
                 break
             else:
                 print("Invalid input. Please type 'Y' or 'N' and hit return")
