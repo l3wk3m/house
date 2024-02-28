@@ -98,8 +98,7 @@ class House:
 
             else:
                 print(
-                    f"{begin_game} is not a valid choice,
-                    please enter 'y' or 'n' and try again."
+                    f"{begin_game} is not a valid choice. Please enter 'y' or 'n' and try again."
                     )
 
 

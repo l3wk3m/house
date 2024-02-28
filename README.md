@@ -4,7 +4,7 @@ Python Essentials Project Portfolio - Code Institute
 
 View deployed site [here.](https://l3wk3m.github.io/house/)
 
- *House* is a command-line interface program whose main goal is to ____. Upon receiving the user's input, the application ___. Subsequently, the user has the option to either persist with the chosen path, switch to another path, recall their memories or exit the application. 
+ *House* is a command-line interface program whose main goal is to deliver the experience of a psychological horro themed text-based adventure game. The user if taken straight to the Main Menu where they get to choose to begin the game or not. Upon receiving the user's input, the application will launch into it's main game loop. Subsequently, the user is provided with their current game-state and prompted with two options of which path they would like to take next. The user will ultimately arrive at 1 of 4 different endings.
 
 ![Responsive Mockup](documentation/)
 
