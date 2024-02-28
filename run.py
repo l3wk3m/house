@@ -63,7 +63,7 @@ class House:
         to begin the game.
         """
 
-        type_text("Welcome to...\n", 0.0125)
+        self.type_text("Welcome to...\n", 0.0125)
 
         print("""
         ████████████████████████████████████████████████████████████████████████████
@@ -108,7 +108,7 @@ class House:
         """).strip().lower()
         while True:
             if restart_prompt == "yes" or "y":
-                current_node = start
+                current_node = "start"
                 self.main_menu()
                 break
             elif restart_prompt == "no" or "n":
@@ -161,16 +161,16 @@ class House:
                 self.restart()
                 break
 
-            while options:
+            if options:
                 choice = input("""
                 What would you like to do? Enter 1 or 2 and then hit return
                 """).strip()
                 #Enter try/except statement later
-                if choice != "1" or "2":
+                while choice not in ["1", "2"]:
                     print("Please choose 1 or 2 and hit return")
-                else:
-                    current_node = options[f"option_{choice}"]
-                    break
+                current_node = options[f"option_{choice}"]
+            else:
+                current_node = None
 
 if __name__ == "__main__":
     game = House()
