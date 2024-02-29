@@ -19,7 +19,7 @@ story_text = {
         Opening your eyes you see that you're seated opposite a man
         who looks oddly familiar. Uncannily familiar even. Like he
         could be a relative of yours who you haven't seen since you
-        were a child. His name tag reads: {Fore.RED}"W. Navidson"{Fore.White}. Even the
+        were a child. His name tag reads: {Fore.RED}"W. Navidson"{Fore.WHITE}. Even the
         name is familiar to you.
 
         As he notices you wake he raises his eyebrows wordlessly.
@@ -27,10 +27,10 @@ story_text = {
         remember before now was...a bathroom? A pale green tiled
         wall..?
 
-        {Fore.RED}"You gave us quite the scare!"{Fore.White} Navidson pipes up after a
+        {Fore.RED}"You gave us quite the scare!"{Fore.WHITE} Navidson pipes up after a
         few moments of silence.
 
-        {Fore.RED}"Can you remember your name?"{Fore.White}
+        {Fore.RED}"Can you remember your name?"{Fore.WHITE}
 
 
 *--------------------------------------------------------------------------*
@@ -46,17 +46,17 @@ story_text = {
             "will": {
                         "text": f"""
 *--------------------------------------------------------------------------*
-        {Fore.GREEN}"Will. My name is Will. Where am I?"{Fore.White}
+        {Fore.GREEN}"Will. My name is Will. Where am I?"{Fore.WHITE}
 
-        {Fore.RED}"Will!"{Fore.White}, Navidson booms back. "Well, it's nice to finally
+        {Fore.RED}"Will!"{Fore.WHITE}, Navidson booms back. "Well, it's nice to finally
         put a name to a face. Especially a face we've been rather
         worried about for a few hours now! Its our job to keep
         an eye on you for a bit, ask you a few questions, find
         out anything you can remember before passing out, make
-        sure you're all healthy in the head - that sort of thing!"{Fore.White}
+        sure you're all healthy in the head - that sort of thing!"{Fore.WHITE}
 
         {Fore.RED}"Well, Will, is there anything you can recall from before
-        you passed out?"{Fore.White}
+        you passed out?"{Fore.WHITE}
 
         You look around the room. There are two men in shirts and
         ties posted at either side of what seems to be the only 
@@ -163,7 +163,7 @@ story_text = {
                         "text": f"""
 *--------------------------------------------------------------------------*
         
-        {Fore.GREEN}"Am I being interrogated?"{Fore.WHITE} You ask.
+        {Fore.GREEN}"Am I being interrogated?"{Fore.WHITE} you ask.
 
         Navidson smiles, a tinge of regret flashing across his
         features.
@@ -182,6 +182,42 @@ story_text = {
                     "option_2": "bathroom"
                 }
             },
+            "bathroom": {
+                        "text": f"""
+*--------------------------------------------------------------------------*
+        
+        {Fore.GREEN}"There was...I think I remember...being in a bathroom?"{Fore.WHITE}
+        
+        He turns in his chair without standing and nods two the two men by the
+        door. The two of them nod back, opening the door and walking out,
+        leaving it ajar behind them.
+
+        There's a tension in the air now and you can't decide if honesty
+        is really the best policy right now.
+
+        Navidson stays sitting, half turned towards the open door, as if
+        waiting for something to happen. Then, suddenly, as if getting
+        the que he was waiting for he sharply swivels his head back around to
+        face you. He gets up suddenly moving swiftly across the room to where 
+        you're seated, taking something from his pocket as he approaches. 
+        He kneels beside you revealing a key he's holding out to you.
+
+        {Fore.RED}"Okay, Will, this is it."{Fore.WHITE} he whispers. {Fore.RED}"Take the key, look in the
+        mirror."{Fore.WHITE} he says, holding out the key.
+
+        What do you do?
+
+*--------------------------------------------------------------------------*
+        Option 1: Take the key
+        Option 2: Dash through the open door behind him
+*--------------------------------------------------------------------------*
+                """,
+                "options": {
+                    "option_1": "take_key",
+                    "option_2": "dash"
+                }
+            },
+            
             "leave": {
                         "text": f"""
 *--------------------------------------------------------------------------*
@@ -357,7 +393,7 @@ story_text = {
 *--------------------------------------------------------------------------*
 
         You know what's good for you. Turning away from the growling
-        you make down the hallway of the {Fore.BLUE}house{Fore.White}. A place you once upon a
+        you make down the hallway of the {Fore.BLUE}house{Fore.WHITE}. A place you once upon a
         time recognised as your home, now a hellscape of unexplainable
         endless hallways.
 
@@ -367,7 +403,7 @@ story_text = {
 
         All of a sudden, the seemingly infintely long hallway seems to
         terminate in a room. You recognise this room, its your old
-        living room. You {Fore.BLUE}house{Fore.White} seems such the distant memory now. But
+        living room. You {Fore.BLUE}house{Fore.WHITE} seems such the distant memory now. But
         you know that door in front of you. The front door. The door out.
         
         You sprint across the living room.
@@ -473,7 +509,7 @@ story_text = {
 *--------------------------------------------------------------------------*
             """,
                 "options": {
-                        "option_1": "open_door"
+                        "option_1": "open_door",
                         "option_2": "wait"
                 },
         },
