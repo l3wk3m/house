@@ -6,6 +6,10 @@ Python Essentials Project Portfolio - Code Institute
 
  *House* is a command-line interface program whose main goal is to deliver the experience of a psychological horror themed text-based adventure game. The user if taken straight to the Main Menu where they get to choose to begin the game or not. Upon receiving the user's input, the application will launch into it's main game loop. Subsequently, the user is provided with their current game-state and prompted with two options of which path they would like to take next. The user will ultimately arrive at 1 of 4 different endings. The story was strongly influenced by the famous psychological thriller novel House of Leaves by Mark Z. Danielewski.
 
+ In this project I use a while loop to display text to the screen, giving the user the story of what's happened so far and prompts of what they can choose to do next. This story text and prompts are stored in a dictionary structure in the story.py file and are referenced and used to update the current game state through our main while loop. I will go into more detail on this data structure later in this ReadMe, but this is the core functionality at the heart of the game. Through playing the game the user will hopefull have a thrilling experience as they begin to question what is even real about the reality in which they find themselves.
+
+ Welcome to *House*!
+
 ## Table of contents
 
 - [User Experience (UX)](#user-experience)
