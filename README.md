@@ -4,7 +4,7 @@ Python Essentials Project Portfolio - Code Institute
 
 View deployed site [here.](https://l3wk3m.github.io/house/)
 
- *House* is a command-line interface program whose main goal is to deliver the experience of a psychological horro themed text-based adventure game. The user if taken straight to the Main Menu where they get to choose to begin the game or not. Upon receiving the user's input, the application will launch into it's main game loop. Subsequently, the user is provided with their current game-state and prompted with two options of which path they would like to take next. The user will ultimately arrive at 1 of 4 different endings.
+ *House* is a command-line interface program whose main goal is to deliver the experience of a psychological horror themed text-based adventure game. The user if taken straight to the Main Menu where they get to choose to begin the game or not. Upon receiving the user's input, the application will launch into it's main game loop. Subsequently, the user is provided with their current game-state and prompted with two options of which path they would like to take next. The user will ultimately arrive at 1 of 4 different endings. The story was strongly influenced by the famous psychological thriller novel House of Leaves by Mark Z. Danielewski.
 
 ![Responsive Mockup](documentation/)
 
@@ -22,22 +22,27 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 
 ### User stories
 
--  *House* is a psychological horror text-based adventure. 
+-  *House* is a psychological horror text-based adventure.
+- As a user, I want to play *House* to experience a thrill.
+- As a user, I want to find the game easy to interact with and to follow along.
+- As a user, I want to finish the experience curious about the multiple possible endings I could discover.
 
 ## Design
 
 - **Imagery:**
-  xxx
+  The ASCII art used to display the game's main menu was generated using [fsymbols](https://fsymbols.com/generators/carty/)
 - **Colour Scheme:**
-  xxx <br>
+  I used the colorama library to colour the terminal text differently for when Will is talking and when Mr. Navidson is talking. This will help the user to distinguish different dialogue sources.
+  
+  In the coloured print of the novel that inspired this story, the word "house" is printed in blue every place it occurs in the text, giving an eerie and unsettling experience. I wanted to emulate this motif in my game, even in cases where the word house appears in character dialogue. I used the colorama library to colour the text for this effect. <br>
 
 - **Typography:**
-  xxx
+  Outside of the ASCII art display of the game's title and the manipulation of the colour of the text in the terminal, standardised typography is used throughout this deployment's UX.
 
 ### Flowcharts
 
 <details>
-<summary> xxx </summary>
+<summary> Photos of my early game path flowcharts are pictured below. These helped guide the design of the game and how each of the endings would resolve. </summary>
 <br>
 
 ![Flowchart](documentation/)
@@ -60,7 +65,7 @@ The ASCII Art "invalid escape sequence" fix: [Adam Johnson](https://adamj.eu/tec
 
 ### Features, which I would like to implement in the future
 
-- 
+- I would like to update the code block that evaluates the choice made when the user is given either option 1 or option 2 to choose from. I would define a function for this purpose that could be flexibly called within the House() class to this end. I currently don't have the time to implement this feature.
 
 ## Technologies Used
 
@@ -144,7 +149,7 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
     This was solved by instead declaring player_char in the scope of the main '.play()' method, the scope in which methods would be passed against it.
 
-    [Screenshot of the Player class working as intended when passed methods]()
+    ![Screenshot of the Player class working as intended when passed methods](/assets/images/take_key_not_working_fix.webp)
 
   4. Although it wasn't picked up by the linter, my original ASCII art generated on [fsymbols](https://fsymbols.com/generators/carty/) seemed to be breaking pep8 standards:
 
@@ -188,8 +193,8 @@ This site is deployed using Heroku. To deploy it from its GitHub repository to H
 
 ### Content
 
-- The background image is from 
-- 
+- The inspiration for the story was taken from Mark Z. Danielewski's novel 'House of Leaves'
+- The content of the story is my own
 
 ### Code
 
@@ -200,21 +205,22 @@ This site is deployed using Heroku. To deploy it from its GitHub repository to H
   - [mdn](https://developer.mozilla.org/en-US/)
   - [W3C](https://www.w3.org/)
   - [W3schools](https://www.w3schools.com/)
-  - [DevDocs](https://devdocs.io/)
+  - [CodeHS](https://codehs.com/)
   - [Stack Overflow](https://stackoverflow.com/)
   - Slack Community
 
 ### Media
 
-- 
+- See also: ['House of Leaves' by Mark Z. Danielewski](https://www.amazon.co.uk/House-Leaves-Mark-Z-Danielewski/dp/038560310X/ref=sr_1_1?crid=2WC1THX7CFVV0&dib=eyJ2IjoiMSJ9.rpTtExF5nzhsztBGGQUAIfJZ8Shqs6UAE05vkTwddGPK1utsHBSiIEhQ_XieTJVhK_nfAZ8-UbY9O7KCftW6e2hBfODJ32YKazVd1ZJlUJpgpXoa_nYlOvdi3L4ONk0P5E_H2FD-Hb0m-rYwXuYxvblDXKMCmauoNx5elnsBq50VSoTTLQ_s-ilEoGdBfQyhscQjvCpVMU2bA96EWgvHTOkxWqxn0dY1z3kAgtvYz1E.FUgVOaHFTps19LBt1jB9IB2hB8fTLtfz-juLbWO_-ik&dib_tag=se&keywords=house+of+leaves+mark+z.+danielewski&qid=1709172932&sprefix=house+of+lea%2Caps%2C65&sr=8-1)
 
 ### ReadMe
 
-- Thank you to
+- Thank you to [Queenisabaer](https://github.com/queenisabaer/) from who's ReadMe this structure format was taken
+- Thank you to Kate_5P on the Code Institute Slack channel for giving me the format for the testing section of my ReadMe.
 
 ### Acknowledgments
 
 - I would like to thank my wonderful mentor Ronan McLeland for his great assistance during the creation of this project and for help structuring this ReadMe.
-- Thank you to Kate ____ for giving me the format for testing for my ReadMe.
+- Thank you to my Code Institute cohort facilitator Laura Mayock, who has been wonderfully supportive throughout this process.
 
 **This is for educational use.**
