@@ -72,7 +72,7 @@ The ASCII Art "invalid escape sequence" fix: [Adam Johnson](https://adamj.eu/tec
 - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) to beautify the code
 - [LanguageTool](https://languagetool.org/) was used to check the grammar and spelling in the README and the Code. 
 - [Colorama](https://pypi.org/project/colorama/)was used to color the text in the terminal.
-- [Pixelied](https://pixelied.com/convert/jpg-converter/jpg-to-webp) was used to convert jpg images into wepb images.
+- [Pixelied](https://pixelied.com/convert/png-converter/png-to-webp) was used to convert png images into wepb images.
 - [Tinypng](https://tinypng.com/) was used to compress the webp background-image.
 
 ## Testing
@@ -122,17 +122,17 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
   1. The game deployed even if the it received the input "no" or "n" when asked to start:
 
-    [Screenshot of the terminal receiving an "n" input and starting the game anyway]()
+    ![Screenshot of the terminal receiving an "n" input and starting the game anyway](/assets/images/start_game_n_prompt_error.webp)
 
-      given that I also ran into this problem when calling the restart() method, I will describe how I fixed the problem wherein:
+    given that I also ran into this problem when calling the restart() method, I will describe how I fixed the problem wherein:
 
   2. The game restarted from the .restart() method even if it received the input "no" or "n":
 
-    [Screenshot of the terminal receiving an "n" input and starting the game anyway]()
+    ![Screenshot of the terminal receiving an "n" input and starting the game anyway](/assets/images/end_game_prompt_error.webp)
 
     The fix for both of the above bugs was the same, instead of the if statement being phrased 'if begin_game == "yes" or "y"', it needed to be written 'if begin_game == "yes" or begin_game == "y"'. The same fix needed to be applied to the "no"/"n" inputs for the main_menu and restart methods:
 
-    [Screenshot of the terminal receiving an "n" input and exiting the game]()
+    ![Screenshot of the terminal receiving an "n" input and exiting the game](/assets/images/end_game_prompt_solution.webp)
 
     Without the if statement written like this, the input would take any value and run anyway:
 
@@ -140,7 +140,7 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
   3. The player_char variable was not declared in the correct scope and so attempts to call methods against it failed:
 
-    [Screenshot of an attempt to call player_char.take_key() failing]()
+    ![Screenshot of an attempt to call player_char.take_key() failing](/assets/images/take_key_not_working.webp)
 
     This was solved by instead declaring player_char in the scope of the main '.play()' method, the scope in which methods would be passed against it.
 
