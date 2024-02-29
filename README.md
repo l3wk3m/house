@@ -53,19 +53,27 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 
 ### Existing Features
 
-The ASCII Art "invalid escape sequence" fix: [Adam Johnson](https://adamj.eu/tech/2022/11/04/why-does-python-deprecationwarning-invalid-escape-sequence/)
+- The game deploys from run.py, calling the main_menu() method.
 
+- The title of the game is displayed for the user in ASCII art and they're asked if they want to play the game
 
-<details>
-<summary> Screenshot x </summary>
-<br>
+- A while loop is called within main_menu, validating whether or not the program receives the inputs of "no", "n", "yes" or "y". Any other input returns an error and the user is prompted for another input.
 
-![Screenshot](documentation/)
-</details>
+- If the user selects "no" or "n", they are told to select "y" or "yes" when they are ready.
+
+- When the user selects "yes", the play() method is called. This is the main function running the gameplay loop.
+
+- The play() method pulls story information and options from a separate file called story.py which is imported at the top of the project. This file stores all of the story information and the story paths in many dictionary data structures within one master dictionary data structure. The beauty of desgining the game around this is it is then very easy to write the code to call the key/value pairs back from the story.py file. Starting at the "start" key, you iterate through choices using a while loop by reading the text, passing your choice of option 1 or option 2 to the program. The choice you make is used to update the key of the text node you are on with this line - "current_node = options[f"option_{choice}"]", updating the story node you're on from "start" to whatever next node in the path you've chosen. Once updated, the while loop repeats, this time calling the text from the new story node you are on, subsequently offering you the two options from that story node. The play() method also looks out for the key "ending", which signal that the player has reached a game ending, triggering text telling them which ending they've gotten and giving the option to restart the game using the restart() method. The play() method also looks out for the "key" key, which I will explain now.
+
+- The Player() class is initialised above the main House() class to create the 'object' of the player. This player has one attribute - 'has_key', either evaluated to True or False. This is because one of the endings, ending 3, the "true" ending, requires that the player acquire a key from Mr. Navidson during the interrogation section before going back to the house. If the player acquired the key, which will update this has_key property to True, when they reach the door out the front of the house, they can use the key they've acquired to unlock the door and escape. If they do not have the key at this stage, they instead get ending 4, perishing in the house. This inclusion of OOP (Object Oriented Programming) Paradigms was important to me for this project as I liked the idea of using this structure to 'describe the world'.
+
+- The restart() method is called when the game reaches any of it's end states. If the user chooses to restart, the main_menu() method passes and the game begins again. If they do not they are thanked for playing and the game exits.
 
 ### Features, which I would like to implement in the future
 
 - I would like to update the code block that evaluates the choice made when the user is given either option 1 or option 2 to choose from. I would define a function for this purpose that could be flexibly called within the House() class to this end. I currently don't have the time to implement this feature.
+
+- There is also a variable I've declared called 'escape' that takes a boolean value. I would like to update the code block in the play() method to instead call a function that runs a check if escape passes as true or not. If it does, the user can get ending 3, the 'true ending', escaping the house. The logic of this is already present in the game but in future I would like to use this variable within an external method to more eloquently handly this process.
 
 ## Technologies Used
 
