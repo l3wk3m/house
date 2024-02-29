@@ -206,10 +206,49 @@ story_text = {
 
 - - - - - - - - - - - - ------------------------------- - - - - - - - - - - - -
         Option 1: Take the key
-        Option 2: Dash through the open door behind him
+        Option 2: Ignore Navidson, lean into your memory. Try remember more.
 - - - - - - - - - - - - ------------------------------- - - - - - - - - - - - -
                 """,
-        "options": {"option_1": "take_key", "option_2": "dash"},
+        "options": {"option_1": "take_key", "option_2": "ignore"},
+    },
+
+# This is the choice where the user will end up back in the house 
+# WITHOUT the key, guaranteeing ending 4
+
+    "ignore": {
+        "text": f"""
+- - - - - - - - - - - - ------------------------------- - - - - - - - - - - - -
+
+        You ignore Navidson. You ignore the key.
+
+        You instead lean into your memories. What is this bathroom you can't
+        get out of your head?
+
+        You look around and spot that one-way mirror again. But it looks
+        different now.
+
+        You get up and aproach it and as you do it seems to change? Its no
+        longer a rectangular window, but a mirror. A bathroom mirror. 
+
+        Bewildered, you look back to Navidson. There's nobody there.
+
+        You turn around to face the mirror again and in the reflection...
+
+        It's Mr. Navidson. You. Will Navidson.
+
+        You haven't been trasported to this dingey bathroom, its more like..
+        Like you never left the bathroom to begin with. You have to get out
+        of here.
+
+        What do you do?
+
+- - - - - - - - - - - - ------------------------------- - - - - - - - - - - - -
+        Option 1: Head for the door
+        Option 2: Check the room
+- - - - - - - - - - - - ------------------------------- - - - - - - - - - - - -
+                """,
+        "options": {"option_1": "door", "option_2": "check_bathroom"},
+        "key": "acquired",
     },
     "leave": {
         "text": f"""
@@ -328,7 +367,8 @@ story_text = {
 
         He's pointing at the mini interrogation window you spotted earlier.
 
-        You get up and aproach it, when you look
+        You get up and aproach it and as you do it seems to change? Its no
+        longer a rectangular window, but a mirror. A bathroom mirror.
 
         Bewildered, you look back to Navidson. There's nobody there.
 

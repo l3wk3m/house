@@ -48,7 +48,14 @@ class House:
             errno, strerror = e.args
             print(f"There is an I/O Error, number, {errno}: {strerror}")
 
-    def type_text(self, text, delay=0.01):
+    # A method to slowly type the output text to the terminal to add
+    # drama and suspense when called.
+    # Uses the imported sys and time libraries to iterate each character
+    # out to the terminal from its for loop, adding a delay before each
+    # subsequent character is printed using the stdout object.
+    # Code spotted in https://github.com/queenisabaer/life-in-numbers
+    # before updating and adding to project.
+    def type_text(self, text, delay=0.02):
         """
         Simulates the printing speed of a terminal to give the
         Player a feeling that they're experiencing the story
@@ -66,6 +73,8 @@ class House:
             time.sleep(delay)
         print()
 
+    # The main menu of the game where the user gets to choose whether
+    # or not they play the game
     def main_menu(self):
         """
         Displays the game title to the terminal in ASCII
@@ -118,6 +127,7 @@ class House:
                 """
                 )
 
+    # A method for restarting the game when an end state is reached
     def restart(self):
         while True:
             restart_prompt = (
@@ -139,6 +149,10 @@ class House:
             else:
                 print("Invalid input. Please type 'Y' or 'N' and hit return")
 
+    # A method for checking if the player has the key, updating the escape
+    # variable to True if true.
+    # Currently redundant given how the program runs but I would like to
+    # use this to improve upon the current logic if I find the time
     def check_key_status(self):
         if player_char.has_key:
             escape = True
@@ -153,8 +167,13 @@ class House:
         game and then executes the game loop, pulling player
         options from the dictionary in story.py.
         """
+        # Assigns the player class to a variable called player_char
         player_char = Player(False)
 
+        # The main loop of the play method
+        # Each declared variable is checked to give the user the
+        # appropriate story prompt, depending on which node
+        # they've landed on.
         while current_node:
             node = self.story_text[current_node]
             text = node["text"]
@@ -164,12 +183,18 @@ class House:
             lock = node.get("lock")
             escape = False
 
+            # Prints the story text of the current node
             print(text)
 
+            # Checks if the player acquires the key from Navidson
+            # and updates the class property has_key with the
+            # .take_key() method
             if key == "acquired":
                 player_char.take_key()
                 print("You've acquired a key - this could come in handy later...")
 
+            # The "lock": "try" key in the story will only appear in the story
+            # Where the player encounters the locked door while posessing the key
             if lock == "try":
                 if player_char.has_key:
                     self.type_text("You try your key in the door...", 0.5)
@@ -177,12 +202,14 @@ class House:
                     print("The door swings open in front of you.")
                     self.type_text("You're free.", 1)
 
+            # The key: value pairs to call each ending from the story dictionary
+            # Tells the user which ending they got and the restart method prompts
+            # them as to whether they'd like to try again
             if ending == "1":
                 self.type_text(
                     """
-                    Ending 1 of 4 has been discovered
-                """,
-                    0,
+                Ending 1 of 4 has been discovered
+                """
                 )
                 self.restart()
                 break
@@ -212,6 +239,16 @@ class House:
                 self.restart()
                 break
 
+            # So long as the value for the key "options" is truthy, the below
+            # code will run
+            # Otherwise the code will catch on either an "ending" key or the
+            # "lock" key
+            # Takes an input from the user and checks if its one of the only
+            # two valid inputs
+            # Finally it updates the current_node variable declared at the
+            # start of this method's while loop to pull the next piece of
+            # story from the dictionary and to generate the user's two
+            # new prompts
             if options:
                 choice = input(
                     """
@@ -231,7 +268,7 @@ class House:
             else:
                 current_node = None
 
-
+# Runs the game in the terminal window on initialisation
 if __name__ == "__main__":
     game = House()
     game.main_menu()

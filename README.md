@@ -226,7 +226,8 @@ This site is deployed using Heroku. To deploy it from its GitHub repository to H
 
 ### Code
 
-- My data structure for calling my story elements and taking inputs from the user works as follows:
+- My data structure for calling my story elements and taking inputs from the user using a dictionary structure was suggested by my mentor. The exact format of this was inspired by the story.py file written by [GayatriG19](https://github.com/gayatrig19)
+in her project [The Quest](https://github.com/gayatrig19/the-quest-adventures-game/) which I took and implemented in my own way, adding different story, endings and possibilities, like the discovering of a key.
 
 - The following websites were used as a source of knowledge: <br>
   - [Google](www.google.com)
