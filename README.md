@@ -188,7 +188,9 @@ Unfortunately it is too late to try and get this try/except validator to work |
 
    ![Screenshot of ASCII art spilling over the side of the terminal](/assets/images/ascii_art_error.webp)
 
+6. **Bugs Not Solved for**
 
+- My try except statement to handle an I/O error is not working as intended. If I had more time I would try and get it working as intended, but as all files are included in deployment, it is not currently a critical error.
 
 ## Deployment
 
