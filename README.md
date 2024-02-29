@@ -102,8 +102,7 @@ After checking for win conditions or if the Player has acquired the key needed f
 - [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) was used to save and store the files for the website.
 - [Excalidraw](https://excalidraw.com/) was used to create the Flowchart.
-- [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) to beautify the code
-- [LanguageTool](https://languagetool.org/) was used to check the grammar and spelling in the README and the Code. 
+- [Code Beautifier](https://codebeautify.org/python-formatter-beautifier) to beautify the code.
 - [Colorama](https://pypi.org/project/colorama/)was used to color the text in the terminal.
 - [Pixelied](https://pixelied.com/convert/png-converter/png-to-webp) was used to convert png images into wepb images.
 - [Tinypng](https://tinypng.com/) was used to compress the webp background-image.

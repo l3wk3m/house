@@ -17,6 +17,7 @@ class Player:
     that will be used to evaluate whether or not the Player
     is holding the key needed for the game's true ending.
     """
+
     def __init__(self, has_key):
         self.has_key = has_key
 
@@ -31,6 +32,7 @@ class House:
     and evaluate player choices from the dicts
     in the story.py file
     """
+
     def __init__(self):
         """
         This is the initialiser for the game.
@@ -39,7 +41,7 @@ class House:
         choices from which they will play out the text-based
         adventure.
         """
-        #Try/Except Error handler incase story.py isn't found in the repository
+        # Try/Except Error handler incase story.py isn't found in the repository
         try:
             self.story_text = story_text
         except OSError as e:
@@ -73,7 +75,8 @@ class House:
 
         self.type_text("Welcome to...\n", 0.06)
 
-        print(f"""
+        print(
+            f"""
 {Fore.BLUE}
 ────────────────────────────────────────────────────────────────────────────
 ─██████──██████─██████████████─██████──██████─██████████████─██████████████─
@@ -89,12 +92,15 @@ class House:
 ─██████──██████─██████████████─██████████████─██████████████─██████████████─
 ────────────────────────────────────────────────────────────────────────────\n
 {Fore.WHITE}
-        """)
+        """
+        )
 
         while True:
-            begin_game = input("""
+            begin_game = input(
+                """
             Are you ready to begin playing the game?\n
-            """).lower()
+            """
+            ).lower()
             if begin_game == "yes" or begin_game == "y":
                 self.type_text("Then let's begin...", 0.01)
                 self.play()
@@ -105,16 +111,24 @@ class House:
                 self.type_text("When you are ready, type 'y' and hit return")
 
             else:
-                print(f"""
+                print(
+                    f"""
                 {begin_game} is not a valid choice.
                 Please enter 'y' or 'n' and try again."
-                """)
+                """
+                )
 
     def restart(self):
         while True:
-            restart_prompt = input("""
+            restart_prompt = (
+                input(
+                    """
         Would you like to play again?
-        """).strip().lower()
+        """
+                )
+                .strip()
+                .lower()
+            )
             if restart_prompt == "no" or restart_prompt == "n":
                 print("Thank you for playing!")
                 break
@@ -154,9 +168,7 @@ class House:
 
             if key == "acquired":
                 player_char.take_key()
-                print(
-                    "You've acquired a key - this could come in handy later..."
-                    )
+                print("You've acquired a key - this could come in handy later...")
 
             if lock == "try":
                 if player_char.has_key:
@@ -166,40 +178,55 @@ class House:
                     self.type_text("You're free.", 1)
 
             if ending == "1":
-                self.type_text("""
+                self.type_text(
+                    """
                     Ending 1 of 4 has been discovered
-                """, 0)
+                """,
+                    0,
+                )
                 self.restart()
                 break
             elif ending == "2":
-                self.type_text("""
+                self.type_text(
+                    """
                 Ending 2 of 4 discovered
-                """)
+                """
+                )
                 self.restart()
                 break
             elif ending == "3":
-                self.type_text("""
+                self.type_text(
+                    """
                 Ending 3 of 4 discovered - True Ending!
-                """)
+                """
+                )
                 self.restart()
                 break
             elif ending == "4":
-                self.type_text("""
+                self.type_text(
+                    """
                 You came so close...but you perished.
                 Ending 4 of 4 discovered.
-                """)
+                """
+                )
                 self.restart()
                 break
 
             if options:
-                choice = input("""
+                choice = input(
+                    """
                 What would you like to do? Enter 1 or 2 and then hit return
-                """).strip()
+                """
+                ).strip()
                 while choice not in ["1", "2"]:
                     print("Please choose 1 or 2 and hit return")
-                    choice = input(("""
+                    choice = input(
+                        (
+                            """
                     What would you like to do? Enter 1 or 2 and then hit return
-                    """).strip())
+                    """
+                        ).strip()
+                    )
                 current_node = options[f"option_{choice}"]
             else:
                 current_node = None
