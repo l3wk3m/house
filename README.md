@@ -74,7 +74,6 @@ The ASCII Art "invalid escape sequence" fix: [Adam Johnson](https://adamj.eu/tec
 - [Colorama](https://pypi.org/project/colorama/)was used to color the text in the terminal.
 - [Pixelied](https://pixelied.com/convert/jpg-converter/jpg-to-webp) was used to convert jpg images into wepb images.
 - [Tinypng](https://tinypng.com/) was used to compress the webp background-image.
-- [Pixabay](https://www.pixabay.com/de-de/) was used to search and load the background image
 
 ## Testing
 
@@ -98,7 +97,14 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
 | **Test** | **Test Description** | **Expected Outcome** | **Result**|
 |:---|:---|:---|:---|
-| What happens if a value other than 1 or 2 is passed as an option? | When prompted for option 1 or 2 - a string of letters was input | The user would be prompted to try a suitable value | The while loop reprinted the message "Please choose 1 or 2 and hit return" infinitely to the console |
+| What happens if a value other than 1 or 2 is passed as an option? | When prompted for option 1 or 2 - a string of letters was input. | The user would be prompted to try a suitable value. | The while loop reprinted the message "Please choose 1 or 2 and hit return" infinitely to the console. A second input prompt was added to the while loop that validated the code (line 198 at time of writing) to give the user another chance to input the correct format of choice. |
+|:---|:---|:---|:---|
+| Will the try/except block manage to raise the OSError properly if the story.py file is missing? | This repo was cloned and deployed to a version of VS Code local to my machine where I then locally deleted the story.py file from the repo |The except block would throw an OSError, giving specific more specific details of the I/O problem and would exit the function|:---|
+|:---|:---|:---|:---|
+| What will happen if a value other than "yes" or "no" is passed when the start game prompt is given? | I ran the program via the Heroku deployment and, when prompted as to whether I wanted to start the game or not, I enterred a number instead and hit return. | The 'else' clause of the code will return "{begin_game} is not a valid choice. Please enter 'y' or 'n' and try again.". | The program executed regardless. Something in the 'if' statement was found to be faulty - addressed in the **Bugs** section |
+|:---|:---|:---|:---|
+| What will happen if a value other than "yes" or "no" is passed when the restart game prompt is given? | I ran the program via the Heroku deployment and, when prompted as to whether I wanted to restart the game or not, I enterred a number instead and hit return. | The 'else' clause of the code will return "Invalid input. Please type 'Y' or 'N' and hit return". | The program executed regardless. Something in the 'if' statement was found to be faulty - addressed in the **Bugs** section |
+
 
 
 
@@ -112,7 +118,39 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
 5. **Bugs**
 
-- 
+- The following bugs were uncovered throughout the deployment process:
+
+  1. The game deployed even if the it received the input "no" or "n" when asked to start:
+
+    [Screenshot of the terminal receiving an "n" input and starting the game anyway]()
+
+      given that I also ran into this problem when calling the restart() method, I will describe how I fixed the problem wherein:
+
+  2. The game restarted from the .restart() method even if it received the input "no" or "n":
+
+    [Screenshot of the terminal receiving an "n" input and starting the game anyway]()
+
+    The fix for both of the above bugs was the same, instead of the if statement being phrased 'if begin_game == "yes" or "y"', it needed to be written 'if begin_game == "yes" or begin_game == "y"'. The same fix needed to be applied to the "no"/"n" inputs for the main_menu and restart methods:
+
+    [Screenshot of the terminal receiving an "n" input and exiting the game]()
+
+    Without the if statement written like this, the input would take any value and run anyway:
+
+    [Screenshot of the start game prompt taking the value of "2" and running regardless]()
+
+  3. The player_char variable was not declared in the correct scope and so attempts to call methods against it failed:
+
+    [Screenshot of an attempt to call player_char.take_key() failing]()
+
+    This was solved by instead declaring player_char in the scope of the main '.play()' method, the scope in which methods would be passed against it.
+
+    [Screenshot of the Player class working as intended when passed methods]()
+
+  4. Although it wasn't picked up by the linter, my original ASCII art generated on [fsymbols](https://fsymbols.com/generators/carty/) seemed to be breaking pep8 standards:
+
+    [Screenshot of ASCII art spilling over the side of the terminal]()
+
+
 
 ## Deployment
 
