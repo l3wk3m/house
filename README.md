@@ -98,6 +98,7 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
 | **Test** | **Test Description** | **Expected Outcome** | **Result**|
 |:---|:---|:---|:---|
+| What happens if a value other than 1 or 2 is passed as an option? | When prompted for option 1 or 2 - a string of letters was input | The user would be prompted to try a suitable value | The while loop reprinted the message "Please choose 1 or 2 and hit return" infinitely to the console |
 
 
 
