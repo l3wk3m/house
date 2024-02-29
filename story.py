@@ -1,3 +1,5 @@
+from colorama import Fore
+
 """
 Here I will store all of the story text and choice prompts
 in one dictionary.
@@ -8,8 +10,8 @@ choices of what to do next in the story.
 
 story_text = {
             "start": {
-                "text": """
-**--------------------------------------------------------------------------**
+                "text": f"""
+*--------------------------------------------------------------------------*
 
         You hear the sound of a ticking clock as you start to stir
         in your chair.
@@ -17,7 +19,7 @@ story_text = {
         Opening your eyes you see that you're seated opposite a man
         who looks oddly familiar. Uncannily familiar even. Like he
         could be a relative of yours who you haven't seen since you
-        were a child. His name tag reads: "W. Navidson". Even the
+        were a child. His name tag reads: {Fore.RED}"W. Navidson"{Fore.White}. Even the
         name is familiar to you.
 
         As he notices you wake he raises his eyebrows wordlessly.
@@ -25,16 +27,16 @@ story_text = {
         remember before now was...a bathroom? A pale green tiled
         wall..?
 
-        "You gave us quite the scare!" Navidson pipes up after a
+        {Fore.RED}"You gave us quite the scare!"{Fore.White} Navidson pipes up after a
         few moments of silence.
 
-        "Can you remember your name?"
+        {Fore.RED}"Can you remember your name?"{Fore.White}
 
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Tell him your name.
         Option 2: Don't answer the question. Ask where you are instead.
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                      """,
                 "options": {
                     "option_1": "will",
@@ -42,38 +44,37 @@ story_text = {
                 }
             },
             "will": {
-                        "text": """
-**--------------------------------------------------------------------------**
-        "Will. My name is Will. Where am I?"
+                        "text": f"""
+*--------------------------------------------------------------------------*
+        {Fore.GREEN}"Will. My name is Will. Where am I?"{Fore.White}
 
-        "Will!", Navidson booms back. "Well, it's nice to finally
+        {Fore.RED}"Will!"{Fore.White}, Navidson booms back. "Well, it's nice to finally
         put a name to a face. Especially a face we've been rather
         worried about for a few hours now! Its our job to keep
         an eye on you for a bit, ask you a few questions, find
         out anything you can remember before passing out, make
-        sure you're all healthy in the head - that sort of thing!"
+        sure you're all healthy in the head - that sort of thing!"{Fore.White}
 
-        "Well, Will, is there anything you can recall from before
-        you passed out?"
+        {Fore.RED}"Well, Will, is there anything you can recall from before
+        you passed out?"{Fore.White}
 
         You look around the room. There are two men in shirts and
         ties posted at either side of what seems to be the only 
-        door in or out of here. Navidson himself wears a blue
-        button-down shirt and navy slacks. The only feature on the
+        door in or out of here. The only feature on the
         walls, apart from the one door, looks like one of those
         reflective one-way windows they use in interrogation
         rooms in police stations in the movies. Except the shape
         of it is weird - its longer vertically than it is
         horizontally.
 
-        You have an uneasy feeling as you take all of this in"
+        You have an uneasy feeling as you take all of this in.
 
 
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Tell Navidson you don't remember anything
         Option 2: Tell Navidson about the bathroom
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {
                     "option_1": "dont_remember",
@@ -81,19 +82,19 @@ story_text = {
                 }
             },
             "where_am_i": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
 
-        "Where am I?", you say cautiously. 
+        {Fore.GREEN}"Where am I?"{Fore.WHITE}, you say cautiously. 
         
-        "Ah, the cautious type." Navidson remarks with a half-grin 
-        Its our job to keep an eye on you for a bit, ask you a few 
+        {Fore.RED}"Ah, the cautious type."{Fore.WHITE} Navidson remarks with a half-grin 
+        {Fore.RED}"Its our job to keep an eye on you for a bit, ask you a few 
         questions, find out anything you can remember before passing 
         out, makesure you're all healthy in the head - that sort of 
-        thing!"
+        thing!"{Fore.WHITE}
 
-        "Well, Will, is there anything you can recall from before
-        you passed out?"
+        {Fore.RED}"Well, Will, is there anything you can recall from before
+        you passed out?"{Fore.WHITE}
 
         You look around the room. There are two men in shirts and
         ties posted at either side of what seems to be the only 
@@ -105,32 +106,32 @@ story_text = {
         of it is weird - its longer vertically than it is
         horizontally.
 
-        You have an uneasy feeling as you take all of this in"
+        You have an uneasy feeling as you take all of this in.
 
 
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Tell Navidson you don't remember anything
         Option 2: Tell Navidson about the bathroom
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {},
                 "ending": "1"
             },
             "dont_remember": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
 
-        "I don't remember anything, sorry."
+        {Fore.GREEN}"I don't remember anything, sorry."{Fore.WHITE}
 
         Navidson looks at you, slightly unbelieving.
 
-        "Nothing at all?", he presses you.
+        {Fore.RED}"Nothing at all?"{Fore.WHITE}, he presses you.
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Insist you don't remember anything
         Option 2: Tell Navidson about the bathroom
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {
                     "option_1": "still_dont_remember",
@@ -138,20 +139,20 @@ story_text = {
                 }
             },
             "still_dont_remember": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
         
-        "No, nothing." You insist firmly.
+        {Fore.GREEN}"No, nothing."{Fore.WHITE} You insist firmly.
 
         You look around the room. The small one-directional mirror
         draws your attention now more than ever.
 
-        "Okay", sighs Navidson, resigned, "We just had to be sure!"
+        {Fore.RED}"Okay"{Fore.WHITE}, sighs Navidson, resigned, {Fore.RED}"We just had to be sure!"{Fore.WHITE}
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Ask if this is an interrogation
         Option 2: Tell Navidson about the bathroom
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {
                     "option_1": "interrogation",
@@ -159,22 +160,22 @@ story_text = {
                 }
             },
             "interrogation": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
         
-        "Am I being interrogated?" You ask.
+        {Fore.GREEN}"Am I being interrogated?"{Fore.WHITE} You ask.
 
         Navidson smiles, a tinge of regret flashing across his
         features.
 
-        "No, you aren't being interrogated. Like I said before:
+        {Fore.RED}"No, you aren't being interrogated. Like I said before:
         we're only asking you these questions for the good of
-        your health. You're free to leave at any time."
+        your health. You're free to leave at any time."{Fore.WHITE}
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Ask to leave now
         Option 2: Tell Navidson about the bathroom
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {
                     "option_1": "leave",
@@ -182,14 +183,14 @@ story_text = {
                 }
             },
             "leave": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
         
-        "Well then I'd like to leave now." You say.
+        {Fore.GREEN}"Well then I'd like to leave now."{Fore.WHITE} You say.
 
         Navidson smiles again and you seem to almost catch him rolling his eyes.
 
-        "Your call!" He smiles.
+        {Fore.RED}"Your call!"{Fore.WHITE} He smiles.
 
         His smile is warm. In spite of how odd this all is, you can't help but
         feel a sense of trust towards him.
@@ -205,15 +206,15 @@ story_text = {
         you're seated, taking something from his pocket as he approaches. 
         He kneels beside you revealing a key he's holding out to you.
 
-        "Okay, Will, this is it." he whispers. "Take the key, look in the
-        mirror." he says, holding out the key.
+        {Fore.RED}"Okay, Will, this is it."{Fore.WHITE} he whispers. {Fore.RED}"Take the key, look in the
+        mirror."{Fore.WHITE} he says, holding out the key.
 
         What do you do?
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Take the key
         Option 2: Dash through the open door behind him
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
                 """,
                 "options": {
                     "option_1": "take_key",
@@ -222,8 +223,8 @@ story_text = {
             },
 
         "dash": {
-                        "text": """
-**--------------------------------------------------------------------------**
+                        "text": f"""
+*--------------------------------------------------------------------------*
         
         You push Navidson hard and make your dash for the door. You're
         not sure what's going on but hell if you're going to stick
@@ -282,14 +283,15 @@ story_text = {
 
         Wow, it sure is a nice day out.
 
-
-        *** ENDING 1/4 *** 
-        """
-    },
+ *--------------------------------------------------------------------------*
+        """,
+                        "options": {},
+                        "ending": "1"
+                },
 
         "take_key": {
-                    "text": """
-**--------------------------------------------------------------------------**
+                    "text": f"""
+*--------------------------------------------------------------------------*
         
         You don't know why but...something in your gut tells you
         to trust this man. That you need to trust him.
@@ -301,55 +303,83 @@ story_text = {
 
         He's pointing at the mini interrogation window you spotted earlier.
 
-        You get up and aproach it, you need to find out where this is going.
+        You get up and aproach it, when you look
 
-        You look onto the shining surface that caught your eye earlier and
-        something that you didn't fully notice earlier clicks for you.
+        Bewildered, you look back to Navidson. There's nobody there.
 
-        You can see the room around you reflected in this one-way window,
-        the chairs you and Navidson were sitting on, Navidson himself
-        watching intently from where he's still crouched down, but you
-        aren't in the reflection...
+        You turn around to face the mirror again and in the reflection...
 
-        It's as if some light distortion happens around where you're
-        standing.
+        It's Mr. Navidson. You. Will Navidson.
 
-        Bewildered, you look back to Navidson. He's slowly nodding.
-
-        He gestures back to the reflective surface.
-
-        You turn around to face the mirror again.
-
+        You haven't been trasported to this dingey bathroom, its more like..
+        Like you never left the bathroom to begin with. You have to get out
+        of here. 
         
+        What do you do?
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Head for the door
-        Option 2: 
-**--------------------------------------------------------------------------**
+        Option 2: Check the room
+*--------------------------------------------------------------------------*
             """,
                 "options": {
                     "option_1": "door",
-                    "option_2": ""
+                    "option_2": "check_bathroom"
                 },
                 "key": "acquired"
         },
 
         "door": {
-                    "text": """
-**--------------------------------------------------------------------------**
+                    "text": f"""
+*--------------------------------------------------------------------------*
+        
+        You find yourself in a long corridor that disappears off into
+        darkness in either direction. But from one direction you can hear...
+
+        Is that...a growling? Like a low thunderous rumble, some sinister
+        noise radiates from one end of the hallway.
+
+        Where do you go?
+
+*--------------------------------------------------------------------------*
+        Option 1: Towards the growling
+        Option 2: Away from the growling
+*--------------------------------------------------------------------------*
+            """,
+                "options": {
+                    "option_1": "towards",
+                    "option_2": "away"
+                },
+        },
+
+        "away": {
+                    "text": f"""
+*--------------------------------------------------------------------------*
+
+        You know what's good for you. Turning away from the growling
+        you make down the hallway of the {Fore.BLUE}house{Fore.White}. A place you once upon a
+        time recognised as your home, now a hellscape of unexplainable
+        endless hallways.
+
+        You run as fast as you can away from the low growling behind you
+        but it doesn't seem to get any quiter. As if its keeping pace
+        with you.
+
+        All of a sudden, the seemingly infintely long hallway seems to
+        terminate in a room. You recognise this room, its your old
+        living room. You {Fore.BLUE}house{Fore.White} seems such the distant memory now. But
+        you know that door in front of you. The front door. The door out.
         
         You sprint across the living room.
 
-        You think you recognize the room, the layout of the furniture.
+        All that's on your mind right now is escape.
 
-        But all that's on your mind right now is escape.
+        You reach the door, what do you do now?
 
-        You reach the door, what do you do now.
-
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
         Option 1: Try the door
         Option 2: Use the key
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
             """,
                 "options": {
                     "option_1": "open_door",
@@ -357,9 +387,65 @@ story_text = {
                 },
         },
 
+        "towards": {
+                    "text": f"""
+*--------------------------------------------------------------------------*
+
+        Either path down the hallway seems infinitely treacherous.
+        Infinitely long. You're not sure if its madness getting the 
+        better of you, but what even constitutes a 'good' or a 'bad'
+        choice any more. Its madness in every direction.
+
+        You walk down the hall towards the growling.
+
+        Its getting louder. And louder. Until gently on your face you
+        can feel...something breathing.
+
+        Before you can think what to do next you hear an ear shatteringly
+        loud noise and...
+
+*--------------------------------------------------------------------------*
+
+        █▀▀ ▄▀█ █▀▄▀█ █▀▀   █▀█ █░█ █▀▀ █▀█
+        █▄█ █▀█ █░▀░█ ██▄   █▄█ ▀▄▀ ██▄ █▀▄
+
+*--------------------------------------------------------------------------*
+            """,
+                "options": {},
+                "ending": "2"
+        },
+
+        "check_bathroom": {
+                    "text": f"""
+*--------------------------------------------------------------------------*
+        
+        You find yourself coming to in this grimey, tiled-wall
+        bathroom.
+
+        Except you're beginning to realise you were never anywhere else.
+
+        Behind you is a door out of the bathroom. Before moving towards
+        it you take one last look in the mirror. In the reflection you can
+        see a key resting on the sink in front of it. But when you look
+        down at the sink in front of the mirror, there's no key where
+        the reflection shows there to be.
+
+        What do you do?
+
+*--------------------------------------------------------------------------*
+        Option 1: Head for the door
+        Option 2: Check the room
+*--------------------------------------------------------------------------*
+            """,
+                "options": {
+                    "option_1": "door",
+                    "option_2": "check_bathroom"
+                },
+        },
+
         "unlock_door": {
-                    "text": """
-**--------------------------------------------------------------------------**
+                    "text": f"""
+*--------------------------------------------------------------------------*
         
         You try the key in the keyhole. It turns.
 
@@ -367,10 +453,52 @@ story_text = {
         behind you, you push your way out through the door, the sunlight
         piercing your eyes for the first time in what feels like days.
 
-**--------------------------------------------------------------------------**
+*--------------------------------------------------------------------------*
             """,
                 "options": {},
                 "lock": "try",
                 "ending": "3"
+        },
+
+        "open_door": {
+                    "text": f"""
+*--------------------------------------------------------------------------*
+        
+        You try open the door, but it's locked!
+
+        The growling sound behind you grows louder...
+
+        What do you do?
+
+*--------------------------------------------------------------------------*
+            """,
+                "options": {
+                        "option_1": "open_door"
+                        "option_2": "wait"
+                },
+        },
+
+        "wait": {
+                    "text": f"""
+*--------------------------------------------------------------------------*
+        
+        You've resigned yourself to your fate.
+
+        The door is locked and you have no key.
+
+        All you can do now is...wait...
+
+        Wait for the inevitable.
+
+*--------------------------------------------------------------------------*
+
+        █▀▀ ▄▀█ █▀▄▀█ █▀▀   █▀█ █░█ █▀▀ █▀█
+        █▄█ █▀█ █░▀░█ ██▄   █▄█ ▀▄▀ ██▄ █▀▄
+
+*--------------------------------------------------------------------------*
+
+            """,
+                "options": {},
+                "ending": "4"
         },
 }

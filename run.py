@@ -1,6 +1,6 @@
 import sys
 import time
-
+from colorama import Fore
 from story import story_text
 
 """
@@ -171,19 +171,20 @@ class House:
                 break
             elif ending == "2":
                 self.type_text("""
-                Ending 2
+                Ending 2 of 4 discovered
                 """)
                 self.restart()
                 break
             elif ending == "3":
                 self.type_text("""
-                Ending 3 / 4 discovered - True Ending!
+                Ending 3 of 4 discovered - True Ending!
                 """)
                 self.restart()
                 break
             elif ending == "4":
                 self.type_text("""
-                Ending 4
+                You came so close...but you perished.
+                Ending 4 of 4 discovered.
                 """)
                 self.restart()
                 break
