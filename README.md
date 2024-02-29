@@ -45,7 +45,7 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 <summary> Photos of my early game path flowcharts are pictured below. These helped guide the design of the game and how each of the endings would resolve. </summary>
 <br>
 
-![Flowchart](documentation/)
+![Flowchart](/assets/images/flowchart.webp)
 
 </details>
 
@@ -96,7 +96,7 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 
   - result for run.py<br>
  . 
-    ![result for run.py]()<br>
+    ![result for run.py](assets/images/linter.webp)<br>
    
 
 2. **Lighthouse Test** <br>

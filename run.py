@@ -39,7 +39,7 @@ class House:
         choices from which they will play out the text-based
         adventure.
         """
-        # Try/Except Error handler incase story.py isn't found in the repository
+        #Try/Except Error handler incase story.py isn't found in the repository
         try:
             self.story_text = story_text
         except OSError as e:
@@ -74,7 +74,6 @@ class House:
         self.type_text("Welcome to...\n", 0.06)
 
         print("""
-        
 ────────────────────────────────────────────────────────────────────────────
 ─██████──██████─██████████████─██████──██████─██████████████─██████████████─
 ─██░░██──██░░██─██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─
@@ -95,7 +94,6 @@ class House:
             Are you ready to begin playing the game?\n
             """).lower()
             if begin_game == "yes" or begin_game == "y":
-                #Enter a try/except statement here at a later date
                 self.type_text("Then let's begin...", 0.01)
                 self.play()
                 break
@@ -126,7 +124,7 @@ class House:
                 print("Invalid input. Please type 'Y' or 'N' and hit return")
 
     def check_key_status(self):
-        if player_char.has_key() == True:
+        if player_char.has_key:
             escape = True
 
     def play(self, current_node="start"):
@@ -154,7 +152,9 @@ class House:
 
             if key == "acquired":
                 player_char.take_key()
-                print("You've acquired a key - this could come in handy later...")
+                print(
+                    "You've acquired a key - this could come in handy later..."
+                    )
 
             if lock == "try":
                 if player_char.has_key:
@@ -192,7 +192,6 @@ class House:
                 choice = input("""
                 What would you like to do? Enter 1 or 2 and then hit return
                 """).strip()
-                #Enter try/except statement later
                 while choice not in ["1", "2"]:
                     print("Please choose 1 or 2 and hit return")
                     choice = input(("""
