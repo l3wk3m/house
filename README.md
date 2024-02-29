@@ -113,9 +113,14 @@ After checking for win conditions or if the Player has acquired the key needed f
 
 - **[CI Python Linter](https://pep8ci.herokuapp.com/#)**
 
-  - result for run.py<br>
+  - Result for run.py<br>
  . 
     ![result for run.py](/assets/images/linter.webp)<br>
+
+  - Result for story.py<br>
+  - E501 ignored as this was called by calling Fore to colourize the text via colorama, meaning no standards would be broken when run in the terminal.
+
+    ![result for story.py](/assets/images/story_linter.webp)<br>
    
 
 2. **Lighthouse Test** <br>

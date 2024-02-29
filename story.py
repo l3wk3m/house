@@ -212,7 +212,7 @@ story_text = {
         "options": {"option_1": "take_key", "option_2": "ignore"},
     },
 
-# This is the choice where the user will end up back in the house 
+# This is the choice where the user will end up back in the house
 # WITHOUT the key, guaranteeing ending 4
 
     "ignore": {
@@ -228,7 +228,7 @@ story_text = {
         different now.
 
         You get up and aproach it and as you do it seems to change? Its no
-        longer a rectangular window, but a mirror. A bathroom mirror. 
+        longer a rectangular window, but a mirror. A bathroom mirror.
 
         Bewildered, you look back to Navidson. There's nobody there.
 
