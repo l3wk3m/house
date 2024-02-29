@@ -29,6 +29,26 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 
 ## Design
 
+### Data Model
+
+Each feature is described in more depth in the **Features** section later in the ReadMe
+
+#### Classes
+There are two classes defined and initialised. One is House(), the class of the game itself. The other is the class of Player(). The Player() is defined in this Object Oriented Programming Paradigm and defined by their attribute of whether or not they possess a key.
+
+#### Dictionaries
+The story and all the choices are stored in a dictionary data structure in story.py. Using this model, it is easy to iterate through the key/value pairs to move from story node to story node, beginning at the "start" node.
+
+#### Functions / Methods
+These are defined to be called in readable, reusable ways.
+
+#### Input Validation
+The main_menu(), restart(), and play() methods all have a form of input validation. As main_menu() and restart() only take values of "y", "yes", "n", and "no", all other inputs are caught in the else part of the if/else blocks that validate them.
+
+After checking for win conditions or if the Player has acquired the key needed for ending 3, the play() method then does input validation to make sure it is being passed a value of either "1" or "2". Any other inputs will restart that particular while loop and request the input "1" or "2" before continuing
+
+
+#### UI
 - **Imagery:**
   The ASCII art used to display the game's main menu was generated using [fsymbols](https://fsymbols.com/generators/carty/)
 - **Colour Scheme:**
@@ -75,6 +95,8 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 
 - There is also a variable I've declared called 'escape' that takes a boolean value. I would like to update the code block in the play() method to instead call a function that runs a check if escape passes as true or not. If it does, the user can get ending 3, the 'true ending', escaping the house. The logic of this is already present in the game but in future I would like to use this variable within an external method to more eloquently handly this process.
 
+- I would like to get the try/except block that checks for I/O errors working.
+
 ## Technologies Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -109,13 +131,17 @@ View deployed site [here.](https://l3wk3m.github.io/house/)
 To ensure the pages are responsive, I used the Google Chrome developer tools.
 
 | **Test** | **Test Description** | **Expected Outcome** | **Result**|
-|:---|:---|:---|:---|
+| | | | |
 | What happens if a value other than 1 or 2 is passed as an option? | When prompted for option 1 or 2 - a string of letters was input. | The user would be prompted to try a suitable value. | The while loop reprinted the message "Please choose 1 or 2 and hit return" infinitely to the console. A second input prompt was added to the while loop that validated the code (line 198 at time of writing) to give the user another chance to input the correct format of choice. |
-|:---|:---|:---|:---|
-| Will the try/except block manage to raise the OSError properly if the story.py file is missing? | This repo was cloned and deployed to a version of VS Code local to my machine where I then locally deleted the story.py file from the repo |The except block would throw an OSError, giving specific more specific details of the I/O problem and would exit the function|:---|
-|:---|:---|:---|:---|
+| | | | |
+| Will the try/except block manage to raise the OSError properly if the story.py file is missing? | This repo was cloned and deployed to a version of VS Code local to my machine where I then locally deleted the story.py file from the repo |The except block would throw an OSError, giving specific more specific details of the I/O problem and would exit the function| Instead of raising the OSError I was hoping for, I got Traceback (most recent call last):
+  File "/Users/admin/Desktop/house/run.py", line 4, in <module>
+    from story import story_text
+ModuleNotFoundError: No module named 'story'
+Unfortunately it is too late to try and get this try/except validator to work |
+| | | | |
 | What will happen if a value other than "yes" or "no" is passed when the start game prompt is given? | I ran the program via the Heroku deployment and, when prompted as to whether I wanted to start the game or not, I enterred a number instead and hit return. | The 'else' clause of the code will return "{begin_game} is not a valid choice. Please enter 'y' or 'n' and try again.". | The program executed regardless. Something in the 'if' statement was found to be faulty - addressed in the **Bugs** section |
-|:---|:---|:---|:---|
+| | | | |
 | What will happen if a value other than "yes" or "no" is passed when the restart game prompt is given? | I ran the program via the Heroku deployment and, when prompted as to whether I wanted to restart the game or not, I enterred a number instead and hit return. | The 'else' clause of the code will return "Invalid input. Please type 'Y' or 'N' and hit return". | The program executed regardless. Something in the 'if' statement was found to be faulty - addressed in the **Bugs** section |
 
 
