@@ -10,7 +10,8 @@ Ask them if they'd like to try escape...HOUSE (in ascii art)
 y/n/how to play
 """
 
-
+# Declaring the class Player with a property of has_key
+# which will be checked against for one of the game's endings
 class Player:
     """
     This is the class of Player that will hold a value
@@ -24,7 +25,7 @@ class Player:
     def take_key(self):
         self.has_key = True
 
-
+# Declaring the class of House, the main game object in this program
 class House:
     """
     This is the main class for the game 'House'
