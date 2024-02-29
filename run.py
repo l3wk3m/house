@@ -174,6 +174,8 @@ class House:
         # Each declared variable is checked to give the user the
         # appropriate story prompt, depending on which node
         # they've landed on.
+        # The loop in broken by end game states and the restart()
+        # method is called
         while current_node:
             node = self.story_text[current_node]
             text = node["text"]

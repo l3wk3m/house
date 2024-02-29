@@ -240,6 +240,8 @@ This site is deployed using Heroku. To deploy it from its GitHub repository to H
 - My data structure for calling my story elements and taking inputs from the user using a dictionary structure was suggested by my mentor. The exact format of this was inspired by the story.py file written by [GayatriG19](https://github.com/gayatrig19)
 in her project [The Quest](https://github.com/gayatrig19/the-quest-adventures-game/) which I took and implemented in my own way, adding different story, endings and possibilities, like the discovering of a key.
 
+- The while loop at the bottom of my .play() method (while choice not in ["1", "2"]:) was worked up with my mentor. I tried a different way of writing the code than what we came up with together, but ended up coming back to this original format for validating the user's input.
+
 - The following websites were used as a source of knowledge: <br>
   - [Google](www.google.com)
   - [mdn](https://developer.mozilla.org/en-US/)
