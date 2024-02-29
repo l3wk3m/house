@@ -148,7 +148,7 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
   4. Although it wasn't picked up by the linter, my original ASCII art generated on [fsymbols](https://fsymbols.com/generators/carty/) seemed to be breaking pep8 standards:
 
-   ![Screenshot of ASCII art spilling over the side of the terminal](/house/assets/images/ascii_art_error.webp)
+   ![Screenshot of ASCII art spilling over the side of the terminal](/assets/images/ascii_art_error.webp)
 
 
 
