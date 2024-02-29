@@ -141,7 +141,7 @@ To ensure the pages are responsive, I used the Google Chrome developer tools.
 
     Without the if statement written like this, the input would take any value and run anyway:
 
-    [Screenshot of the start game prompt taking the value of "2" and running regardless]()
+    ![Screenshot of the start game prompt taking the value of "1" and running regardless](/assets/images/no_validator_error.webp)
 
   3. The player_char variable was not declared in the correct scope and so attempts to call methods against it failed:
 
